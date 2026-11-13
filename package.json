@@ -1,0 +1,37 @@
+{
+  "name": "studiospace-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "StudioSpace backend - Express, MongoDB, BetterAuth",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "dev:local": "node scripts/dev-local.mjs",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "tsx --test src/lib/booking-time.test.ts src/lib/validate.test.ts",
+    "test:integration": "node scripts/live-integration.mjs",
+    "seed": "tsx src/scripts/seed-studios.ts"
+  },
+  "dependencies": {
+    "better-auth": "^1.7.20",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.8.0",
+    "multer": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/multer": "^2.3.0",
+    "@types/node": "^26.6.6",
+    "mongodb-memory-server": "^11.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
